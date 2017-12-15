@@ -17,7 +17,22 @@ end
 kitty = Cat.new("kitty")
 puts kitty.name  # 在畫面上印出 kitty 字樣
 ```
+Answer
+```ruby
+class Cat
+  
+  def initialize(name)
+      @name = name
+  end
+  
+  def name
+      puts @name
+  end
+end
 
+kitty = Cat.new("kitty")
+puts kitty.name  # 在畫面上印出 kitty 字樣
+```
 2. (5 分) 假設有個 Hash：
 
 ```ruby
@@ -29,12 +44,22 @@ profile = {name: "kk", age: 18}
 ```ruby
 p profile["name"]
 ```
-
 會得到什麼結果? 為什麼?
+
+Answer
+```ruby
+會得到 nil，因為在Hash中它的Key是:name而非"name"
+```
 
 3. (5 分) 如果要在 1 到 100 的數字當中，任意取出 5 個不重複的亂數，你會怎麼做？
 
+Answer
+```ruby
+ puts [*1..100].sample(5)
+```
+
 4. (10 分)
+
 ```ruby
 class Bank
   def transfer(amount)
@@ -47,6 +72,11 @@ Bank.transfer(10)
 
 上面這段程式碼執行後會發生什麼事？為什麼？如果有錯誤又該如何修正？
 
+Answer
+```ruby
+找不到trankfer這個方法
+```
+
 5. (10 分) 請問以下方法：
 
 ```ruby
@@ -54,6 +84,12 @@ link_to "刪除", products_path(product), method: :delete, class: "btn btn-defau
 ```
 
 `link_to` 方法共有幾個參數？為什麼？
+
+Answer
+```ruby
+三個，用中跨號誇起來的是參數
+{[link_to "刪除"], [products_path(product)], [method: :delete, class: "btn btn-default"]}
+```
 
 6. (10 分) 在 Ruby 裡面常會看到冒號的寫法，例如：
 
@@ -78,6 +114,13 @@ user_profile = {name: "kk", age: 18, blood_type: :b_negative}
 ```
 
 請問，這三種寫法分別代表什麼意思呢？
+
+Answer
+```ruby
+冒號靠右邊的是代表著Symbol，Symbol有一點像String，但也不完全是Symbol，最大的差異就是當產生一個新的String需要花新的記憶體，Symbol不用。
+冒號靠左邊的是代表著要套用的方法。
+冒號兩邊都有的是怕使用到重覆的名稱而設計的。
+```
 
 ## Rails 題目 (30 分)
 
